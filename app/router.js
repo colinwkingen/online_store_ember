@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('category');
+  this.route('category', {path: '/category/:category_name' });
   this.route('shopping-cart');
 });
 

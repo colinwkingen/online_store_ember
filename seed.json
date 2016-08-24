@@ -3,22 +3,26 @@
     {
       "name": "Coffee Mug",
       "category": "Dishware",
-      "cost": 5
+      "cost": 5,
+      "quantity": 20
     },
     {
       "name": "Pen",
       "category": "Writing",
-      "cost": 1
+      "cost": 1,
+      "quantity": 12
     },
     {
       "name": "T-shirt",
       "category": "Clothing",
-      "cost": 8
+      "cost": 8,
+      "quantity": 3
     },
     {
       "name": "Headphones",
       "category": "Electronics",
-      "cost": 20
+      "cost": 20,
+      "quantity": 12
     }
   ]
 }

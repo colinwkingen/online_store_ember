@@ -11,4 +11,11 @@ export default Ember.Route.extend({
       });
     }
   },
+  actions: {
+    decrementQuantity(item) {
+      item.set('quantity', parseInt(item.get('quantity')) - 1);
+      console.log(item.get('quantity'));
+      item.save();
+    }
+  }
 });

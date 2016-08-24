@@ -2,20 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Service.extend({
   cartItems: [],
-
+  cartTotal: 0,
   add(item) {
     this.get('cartItems').pushObject(item);
-    console.log(this.get('cartItems'));
+    var newTotal = item.get('cost') + this.get('cartTotal');
+    this.set('cartTotal', newTotal);
   },
   remove(item) {
     this.get('cartItems').removeObject(item);
-  },
-  totalPrice() {
-    var totalCost = 0;
-    this.get('cartItems').forEach(function(item){
-      totalCost += item.cost;
-    });
-    return totalCost;
+    var newTotal = this.get('cartTotal') - item.get('cost');
+    this.set('cartTotal', newTotal);
   }
-
 });

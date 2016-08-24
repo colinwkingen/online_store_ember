@@ -1,1 +1,4 @@
-{{yield}}
+<div class="item-tile">
+  <h3>{{item.name}} - {{item.cost}}</h3>
+  <button class="btn btn-sm" {{action 'addToCart' item}}>Add To Cart</button>
+</div>

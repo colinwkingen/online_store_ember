@@ -1,0 +1,24 @@
+{ "items":
+  [
+    {
+      "name": "Coffee Mug",
+      "category": "Dishware",
+      "cost": 5
+    },
+    {
+      "name": "Pen",
+      "category": "Writing",
+      "cost": 1
+    },
+    {
+      "name": "T-shirt",
+      "category": "Clothing",
+      "cost": 8
+    },
+    {
+      "name": "Headphones",
+      "category": "Electronics",
+      "cost": 20
+    }
+  ]
+}

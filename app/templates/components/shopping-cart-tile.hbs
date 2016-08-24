@@ -3,6 +3,7 @@
   {{#each shoppingCart.cartItems as |item|}}
     <li>
       <h4>{{item.name}} - {{item.cost}}</h4>
+      <h4>Quantity: {{item.quantity}}</h4>
       <h4>{{item.category}}</h4>
       <button class="btn btn-default" {{action 'removeItem' item}}>Remove</button>
     </li>

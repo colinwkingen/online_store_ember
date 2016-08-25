@@ -5,7 +5,7 @@
       <h4>{{itemHash.item.name}} - {{itemHash.item.cost}}</h4>
       <h4>Quantity: {{itemHash.quantity}}</h4>
       <h4>{{itemHash.item.category}}</h4>
-      <button class="btn btn-default" {{action 'removeItem' itemHash.item}}>Remove</button>
+      <button class="btn btn-default" {{action 'removeItem' itemHash}}>Remove</button>
     </li>
   {{/each}}
   <li>Total Cost: ${{shoppingCart.cartTotal}}</li>

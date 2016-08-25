@@ -17,16 +17,17 @@ export default Ember.Service.extend({
     var newTotal = item.get('cost') + this.get('cartTotal');
     this.set('cartTotal', newTotal);
   },
-  remove(item) {
-    var index = this.indexOfItem(item);
+  remove(itemHash) {
     var cart = this.get('cartItems');
-    var itemHash = cart[index];
-    if (itemHash.quantity === 1) {
-      cart.removeObject(itemHash);
+    var quant = itemHash.quantity;
+    var index = cart.indexOf(itemHash);
+    cart.removeObject(itemHash);
+    if (itemHash.quantity > 0) {
+      this.get('cartItems').pushObject({"item": itemHash.item, "quantity": quant-1});
     }
     var newCount = this.get('itemCount')-1;
     this.set('itemCount', newCount);
-    var newTotal = this.get('cartTotal') - item.get('cost');
+    var newTotal = this.get('cartTotal') - itemHash.item.get('cost');
     this.set('cartTotal', newTotal);
 
 

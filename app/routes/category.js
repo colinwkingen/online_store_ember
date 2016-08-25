@@ -1,7 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  categoryName: '',
   model(params) {
+    this.set('categoryName', params.categoryName)
     if (params.category_name === 'all' ) {
       return this.store.findAll('item');
     } else {
@@ -11,10 +13,10 @@ export default Ember.Route.extend({
       });
     }
   },
+
   actions: {
     decrementQuantity(item) {
       item.set('quantity', parseInt(item.get('quantity')) - 1);
-      console.log(item.get('quantity'));
       item.save();
     }
   }

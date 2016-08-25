@@ -1,11 +1,11 @@
 <div class="container">
   <ul>
-  {{#each shoppingCart.cartItems as |item|}}
+  {{#each shoppingCart.cartItems as |itemHash|}}
     <li>
-      <h4>{{item.name}} - {{item.cost}}</h4>
-      <h4>Quantity: {{item.quantity}}</h4>
-      <h4>{{item.category}}</h4>
-      <button class="btn btn-default" {{action 'removeItem' item}}>Remove</button>
+      <h4>{{itemHash.item.name}} - {{itemHash.item.cost}}</h4>
+      <h4>Quantity: {{itemHash.quantity}}</h4>
+      <h4>{{itemHash.item.category}}</h4>
+      <button class="btn btn-default" {{action 'removeItem' itemHash.item}}>Remove</button>
     </li>
   {{/each}}
   <li>Total Cost: ${{shoppingCart.cartTotal}}</li>
